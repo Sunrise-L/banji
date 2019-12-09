@@ -1,0 +1,12 @@
+﻿@using banjiguanli.Models
+
+@{
+    var sidebars = (List<SideBars>)ViewBag.SideBars;
+}
+
+<ul class="nav navbar-nav sidebar">
+    @foreach (var sidebar in sidebars)
+    {
+        <li>@Html.ActionLink(sidebar.Name, sidebar.Action, sidebar.Controller, new { area = "" }, new { @class = "navbar-brand" })</li>
+    }
+</ul>

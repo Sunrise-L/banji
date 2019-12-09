@@ -1,0 +1,42 @@
+﻿@model IEnumerable<banjiguanli.Blls.banji.kechenganpaiDetail>
+
+@{
+    ViewBag.Title = "查看班级课程安排";
+}
+
+    <h2>查看班级课程安排</h2>
+
+<p>
+    @Html.ActionLink("Back To List", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BanjiName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BanjiName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectName)
+            </td>
+        </tr>
+    }
+
+</table>
+
